@@ -60,6 +60,7 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'erb2haml'
 end
 
 group :test do
@@ -70,3 +71,5 @@ end
 
 gem "dartsass-rails", "~> 0.5.1"
 gem 'sassc-rails'
+
+gem 'haml-rails'
