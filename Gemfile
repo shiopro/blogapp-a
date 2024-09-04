@@ -67,3 +67,4 @@ group :test do
 end
 
 gem "dartsass-rails", "~> 0.5.1"
+gem 'sassc-rails'
