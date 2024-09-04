@@ -8,5 +8,10 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Article.create({title: '新しい記事だよ', content: 'こんにちは'})
-Article.create({title: '新しい記事だよ', content: 'やっほー!'})
+10.times do
+
+Article.create(
+  title: Faker::Lorem.sentence(word_count: 5),
+  content: Faker::Lorem.sentence(word_count: 100)
+)
+end
