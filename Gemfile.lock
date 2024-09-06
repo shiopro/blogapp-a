@@ -122,6 +122,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dotenv (3.1.2)
+    dotenv-rails (3.1.2)
+      dotenv (= 3.1.2)
+      railties (>= 6.1)
     drb (2.2.1)
     erb2haml (0.1.5)
       html2haml
@@ -391,6 +395,7 @@ DEPENDENCIES
   dartsass-rails (~> 0.5.1)
   debug
   devise
+  dotenv-rails
   erb2haml
   faker
   haml-rails
