@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   root to: 'articles#index'
 
-  resources :articles
+  resources :articles do
+    resources :comments, only: [:new, :create]
+  end
+
+  resource :profile, only: [:show, :edit, :update]
 
   # Defines the root path route ("/")
   # root "posts#index"
