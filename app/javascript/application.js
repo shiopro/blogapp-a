@@ -4,3 +4,7 @@ import "controllers"
 
 import "trix"
 import "@rails/actiontext"
+
+document.addEventListener('DOMContentLoaded', () => {
+  window.alert('DOM LOADED')
+})
