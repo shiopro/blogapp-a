@@ -4,3 +4,12 @@ import "controllers"
 
 import "trix"
 import "@rails/actiontext"
+
+import jquery from "jquery"
+window.$ = jquery
+
+document.addEventListener('DOMContentLoaded', () => {
+  $('.article_title').on('click', () => {
+    window.alert('CLICKED')
+  })
+})
