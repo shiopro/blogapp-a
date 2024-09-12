@@ -1,2 +1,5 @@
 web: bin/rails server -p 3000
 css: bin/rails dartsass:watch
+worker: bundle exec sidekiq -C config/sidekiq.yml
+redis: bundle exec redis-server /usr/local/etc/redis.conf
+webpacker: ./bin/webpack-dev-server
