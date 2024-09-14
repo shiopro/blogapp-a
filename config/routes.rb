@@ -13,10 +13,7 @@ Rails.application.routes.draw do
 
   root to: 'articles#index'
   
-  resources :articles do
-    resources :comments, only: [:new, :create]
-    resource :like, only: [:create, :destroy]
-  end
+  resources :articles 
 
   resources :accounts, only: [:show] do
     resources :follows, only: [:create]
@@ -27,6 +24,13 @@ Rails.application.routes.draw do
     resources :favorites, only: [:index]
     resource :timeline, only: [:show]
     resource :profile, only: [:show, :edit, :update]
+  end
+
+  namespace :api do
+    scope '/articles/:article_id' do
+      resources :comments, only: [:new, :create]
+      resource :like, only: [:create, :destroy]
+    end
   end
 
   # Defines the root path route ("/")
