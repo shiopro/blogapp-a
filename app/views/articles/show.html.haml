@@ -21,11 +21,11 @@
   - if user_signed_in?
     - if current_user.has_liked?(@article)
       .article_heart
-        = link_to article_like_path(@article), data: { turbo_method: 'delete' } do
+        = link_to api_like_path(@article), data: { turbo_method: 'delete' } do
           = image_tag 'heart-active.svg'
     - else
       .article_heart
-        = link_to article_like_path(@article), data: { turbo_method: 'post' } do
+        = link_to api_like_path(@article), data: { turbo_method: 'post' } do
           = image_tag 'heart.svg'
 .article
   %h2= I18n.t('articles.comment_list')
@@ -34,6 +34,6 @@
       %p= comment.content
       
 .container
-  = link_to new_article_comment_path(@article) do
+  = link_to new_api_comment_path(@article) do
     .btn-secondary
       コメントを追加
