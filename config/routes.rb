@@ -12,8 +12,7 @@ Rails.application.routes.draw do
   get 'up' => 'rails/health#show', as: :rails_health_check
 
   root to: 'articles#index'
-  resource :timeline, only: [:show]
-
+  
   resources :articles do
     resources :comments, only: [:new, :create]
     resource :like, only: [:create, :destroy]
@@ -24,8 +23,11 @@ Rails.application.routes.draw do
     resources :unfollows, only: [:create]
   end
 
-  resource :profile, only: [:show, :edit, :update]
-  resources :favorites, only: [:index]
+  scope module: :apps do
+    resources :favorites, only: [:index]
+    resource :timeline, only: [:show]
+    resource :profile, only: [:show, :edit, :update]
+  end
 
   # Defines the root path route ("/")
   # root "posts#index"
