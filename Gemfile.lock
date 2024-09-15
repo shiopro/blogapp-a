@@ -152,6 +152,11 @@ GEM
       html2haml
     erubi (1.13.0)
     erubis (2.7.0)
+    factory_bot (6.5.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.4.3)
+      factory_bot (~> 6.4)
+      railties (>= 5.0.0)
     faker (3.4.1)
       i18n (>= 1.8.11, < 2)
     ffi (1.17.0-aarch64-linux-gnu)
@@ -467,6 +472,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   erb2haml
+  factory_bot_rails
   faker
   haml-rails
   image_processing (~> 1.2)
