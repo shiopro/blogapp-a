@@ -33,6 +33,7 @@ rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
 RSpec.configure do |config|
+  Dir[Rails.root.join('spec/support/authentication_helpers.rb')].each { |f| require f }
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_paths = [
     Rails.root.join('spec/fixtures')
@@ -67,5 +68,8 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
 require 'factory_bot_rails'
+require 'devise'
   config.include FactoryBot::Syntax::Methods
+  config.include Devise::Test::IntegrationHelpers, type: :request
+  config.include AuthenticationHelpers, type: :request
 end
