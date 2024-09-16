@@ -72,4 +72,6 @@ require 'devise'
   config.include FactoryBot::Syntax::Methods
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include AuthenticationHelpers, type: :request
+
+  config.include Devise::Test::IntegrationHelpers, type: :system
 end
